@@ -19,6 +19,25 @@ int main()
 		printf("%d. sayi: ", i);
 		scanf("%lf", &x[i]);
 	}
+	
+	IsSorted(x, N);
+}
+
+// Burada IsSorted fonksiyonunu kullanarak kucukten buyuge olup olmadýgýný kontrol eden kodu yazdim.
+
+int IsSorted(double x[], int N)
+{
+ 	N--;
+ 	
+	if (N==0)
+{
+ 		printf("Girilen sayilar kucukten buyuge dogru siralidir.");
+}
+  	else if (x[N]<x[N-1])
+{
+ 		printf("Girilen sayilar kucukten buyuge dogru sirali degildir.");
+}
+	else return IsSorted(x,N);
 }
 
 
