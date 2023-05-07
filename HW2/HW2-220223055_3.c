@@ -6,7 +6,7 @@
 int main()
 {
 	
-// Burada girilen sayi sayisinin tamsayi veri tipi ile diziye (N) aktarilmasini sagladim.
+// Burada girilen sayilarin string veri tipi ile diziye (sayi1&2) aktarilmasini sagladim.
 	
 	char sayi1[100000], sayi2[100000];
 	int basamak_fark, length1, length2, i;
