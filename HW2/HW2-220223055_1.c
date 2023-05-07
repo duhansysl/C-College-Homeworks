@@ -4,7 +4,10 @@
 
 void main()
 {
-double equation-one[3], equation-two[3], intersection[2];  // Burada dizimin tanimlamasini "double" veri tipiyle yaptim.
+
+	// Burada dizimin tanimlamasini "double" veri tipiyle yaptim.
+
+double equation-one[3], equation-two[3], intersection[2]; 
 	
 	// Burada ilk dizimin elemanlarinin girisini kullanicidan istedim.
 	
