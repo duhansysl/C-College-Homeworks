@@ -11,7 +11,7 @@ int main()
 	printf("---------------------------\n");
 	printf("Eleman sayisini giriniz: ");
 	scanf("%d", &N);
-	printf("---------------------------\n\n");
+	printf("---------------------------\n\nSayilari giriniz: \n\n");
 	printf("--------------\n");
 
 // Burada ustte girilen sayi kadar deger sorulmasini (N) ve girilen degerlerin scanf fonksiyonu ile double veri tipi ile tarandiktan sonra diziye (i) eklenmesini sagladim.
