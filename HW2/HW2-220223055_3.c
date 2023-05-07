@@ -23,7 +23,7 @@ int main()
 	
 	basamak_fark = abs(length1-length2);
 
-		if (length1 < length2)	
+	if (length1 < length2)	
 	{
 		for (i=0;i<basamak_fark;i++)
 		{
