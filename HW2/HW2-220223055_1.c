@@ -15,11 +15,11 @@ double equation_one[3], equation_two[3], intersection[2];
 	printf("Ilk dogrunun parametrelerini giriniz:\n");	   
 	printf("---------------------------------------\n\n"); 
 		
-	printf("-------\n x:"); 
+	printf("-------\n x: "); 
  		scanf("%lf", &equation_one[0]);    
- 	printf("-------\n y:");
+ 	printf("-------\n y: ");
  		scanf("%lf", &equation_one[1]);
- 	printf("--------------\n sabit sayi:");
+ 	printf("--------------\n sabit sayi: ");
    		scanf("%lf", &equation_one[2]);
  	printf("--------------\n\n");	    		
    		
@@ -29,11 +29,11 @@ double equation_one[3], equation_two[3], intersection[2];
    	printf("Ikinci dogrunun parametrelerini giriniz:\n");
 	printf("---------------------------------------\n\n"); 
    	
-	   printf("-------\n x:");
+	   printf("-------\n x: ");
   		scanf("%lf", &equation_two[0]);
-	printf("-------\n y:");
+	printf("-------\n y: ");
   		scanf("%lf", &equation_two[1]);  
-  	printf("--------------\n sabit sayi:");
+  	printf("--------------\n sabit sayi: ");
    		scanf("%lf", &equation_two[2]);
 	printf("--------------\n\n");
 	
