@@ -63,14 +63,21 @@ int main()
 			printf("-");
 		}	
 	}
+	
+	if (length2 == length1)
+	{
+		for (i=0;i<length1;i++)
+		{
+			printf("-");
+		}	
+	}
 
 	
 	
-	
-	printf("\n");
-	
-	return 1;
+	printf("\n    ");
 }
+
+
 
 
 	
