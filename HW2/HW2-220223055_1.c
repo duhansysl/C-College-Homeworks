@@ -61,19 +61,19 @@ double x1, y1, s1, x2, y2, s2, x, y;
  
 // Burada da denklemlerin katsayilari birbirinin kati ise birbirine paralel olacaklari icin buna gore denklemler olusturdum ve if/else yazdim.
  
- if (x2/x1==y2/y1 && x2/x1==s2/s1 && y2/y1==s2/s1) 
+ if (x2/x1==y2/y1 && x2/x1==s2/s1 && y2/y1==s2/s1 || x2/x1==y2/y1) 
 {
- 	printf("Verilen dogrular birbirine parelel sonsuzda kesismektedir.");
+ 	printf("Verilen dogrular birbirine parelel oldugu icin kesismemektedir.");
 }
  	
 // Burada da denklemlerin katsayilari ayni ve sabit farkli iken gereken islemi koda doktum.
 
  else if (x2/x1==y2/y1 && x2/x1!=s2/s1 && y2/y1!=s2/s1) //
 {
- 	printf("Verilen dogrular cakismaktadir");	
+ 	printf("Verilen dogrular cakismaktadir.");	
 }
  
 // Kesisim noktasi bulundugu takdirde gerekecek olan printf komutunu yazdim. degerleri, degerlerin atandigi intersection_point dizisinden aldim.
 
- else printf("Verilen dogrular (%.2lf,%.2lf) noktasinda kesismektedir", intersection_point[1], intersection_point[0]);
+ else printf("Verilen dogrular (%.2lf,%.2lf) noktasinda kesismektedir.", intersection_point[1], intersection_point[0]);
 }
