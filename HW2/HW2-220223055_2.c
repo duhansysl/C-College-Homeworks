@@ -25,41 +25,28 @@ int main()
 	}
 	
 	IsSorted(x, N);
+	
+	if(IsSorted(x, N)){
+		printf("\nDizi kucukten buyuge siralidir.");
+	}
+	else {
+		printf("\nDizi kucukten buyuge sirali degildir.");
+	}
+	return 0;
 }
 
 // Burada IsSorted fonksiyonunu kullanarak kucukten buyuge olup olmadigini kontrol eden kodu yazdim.
 
-int IsSorted(double x[], int N, int a, int i)
+int IsSorted(double x[], int N)
 {
- 	N--;
- 	
-for(i = 0; i <= N ; i++)
-{
-	if (x[N] > x[N-1])
-{
-		a = 1;	
-}
-  	else if (x[N] < x[N-1])
-{
- 		a = 0;
-}
-	else if (x[N] == x[N-1])
-{
-		a = 0;
-}
+ 	if(N <= 1){
+ 		return 1;
+	 }
+	 else if(x[0] < x[1]){
+	 	return IsSorted(x + 1, N - 1);
+	 }
+	 else return 0;
 
-	
-}
-if(a == 1){
-	 	printf("\n-------------------------------------------------\n");
- 		printf("Girilen sayilar kucukten buyuge dogru siralidir.");
- 		printf("\n-------------------------------------------------\n\n");
-}
-else if(a == 0){
-		printf("\n-----------------------------------------------------\n");
- 		printf("Girilen sayilar kucukten buyuge dogru sirali degildir.");
- 		printf("\n-----------------------------------------------------\n\n");
-}
 }
 
 
