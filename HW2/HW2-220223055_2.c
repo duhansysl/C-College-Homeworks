@@ -16,10 +16,10 @@ int main()
 
 // Burada ustte girilen sayi kadar deger sorulmasini (N) ve girilen degerlerin scanf fonksiyonu ile double veri tipi ile tarandiktan sonra diziye (i) eklenmesini sagladim.
 	
-	double x[N];	
-	for (i=1;i<=N;i++)
+	double x[N+1];	
+	for (i=0;i<N;i++)
 	{
-		printf("%d. sayi: ", i);
+		printf("%d. sayi: ", i+1);
 		scanf("%lf", &x[i]);
 		printf("--------------\n");
 	}
@@ -41,14 +41,16 @@ int main()
 
 int IsSorted(double x[], int N)
 {
- 	if(N <= 1){
+ 	if(N <= 1)
+	 {
  		return 1;
 	 }
-	 else if(x[0] < x[1]){
+	if(x[0] <= x[1])
+	{
 	 	return IsSorted(x + 1, N - 1);
-	 }
-	 else return 0;
-
+	}
+	 else 
+	 return 0;
 }
 
 
