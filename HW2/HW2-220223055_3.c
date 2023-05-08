@@ -125,5 +125,5 @@ int main()
 	printf("\n     ");
     printf("%*s\n", strlen(toplam), toplam);
 
-    return 0;
+    return 1;
 }
