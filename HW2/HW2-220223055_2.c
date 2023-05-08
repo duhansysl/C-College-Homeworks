@@ -46,6 +46,12 @@ int IsSorted(double x[], int N)
  		printf("Girilen sayilar kucukten buyuge dogru sirali degildir.");
  		printf("\n-----------------------------------------------------\n\n");
 }
+	else if (x[N] = x[N-1])
+{
+		printf("\n-----------------------------------------------------\n");
+ 		printf("Girilen sayilar kucukten buyuge dogru sirali degildir.");
+ 		printf("\n-----------------------------------------------------\n\n");
+}
 	else return IsSorted(x, N);
 }
 
