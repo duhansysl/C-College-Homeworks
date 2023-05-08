@@ -59,18 +59,18 @@ double x1, y1, s1, x2, y2, s2, x, y;
  intersection_point[0]=(x1*s2-x2*s1)/(x2*y1-x1*y2);
  intersection_point[1]=(y1*s2-y2*s1)/(y2*x1-y1*x2);
  
-// Burada da denklemlerin katsayilari birbirinin kati ise birbirine paralel olacaklari icin buna gore denklemler olusturdum ve if/else yazdim.
+// Burada da denklemlerin katsayilari ayni ve sabit farkli iken gereken islemi koda doktum. 
  
- if (x2/x1==y2/y1 && x2/x1==s2/s1 && y2/y1==s2/s1 || x2/x1==y2/y1) 
+  if (x2/x1==y2/y1 && y2/y1==s2/s1) //
+{
+ 	printf("Verilen dogrular ust uste cakismaktadir.");	
+}
+
+// Burada da denklemlerin katsayilari birbirinin kati ise birbirine paralel olacaklari icin buna gore denklemler olusturdum ve if/else yazdim.
+
+ else if (x2/x1==y2/y1 && x2/x1==s2/s1 && y2/y1==s2/s1 || x2/x1==y2/y1) 
 {
  	printf("Verilen dogrular birbirine parelel oldugu icin kesismemektedir.");
-}
- 	
-// Burada da denklemlerin katsayilari ayni ve sabit farkli iken gereken islemi koda doktum.
-
- else if (x2/x1==y2/y1 && x2/x1!=s2/s1 && y2/y1!=s2/s1) //
-{
- 	printf("Verilen dogrular cakismaktadir.");	
 }
  
 // Kesisim noktasi bulundugu takdirde gerekecek olan printf komutunu yazdim. degerleri, degerlerin atandigi intersection_point dizisinden aldim.
