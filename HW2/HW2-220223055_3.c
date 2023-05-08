@@ -3,6 +3,55 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void reverse_string(char str[]) {
+    int length = strlen(str);
+    int i;
+    char temp;
+
+    for (i = 0; i < length / 2; i++) {
+        temp = str[i];
+        str[i] = str[length - i - 1];
+        str[length - i - 1] = temp;
+    }
+}
+
+void add_numbers(char sayi1[], char sayi2[], char toplam[]) {
+    int len1 = strlen(sayi1);
+    int len2 = strlen(sayi2);
+    int max_len = len1 > len2 ? len1 : len2;
+    int carry = 0;
+    int digit_sum = 0;
+    int i;
+
+    // Dizileri ters çeviriyoruz ki birler basamaðýndan baþlayarak toplama yapabilelim.
+    reverse_string(sayi1);
+    reverse_string(sayi2);
+
+    for (i = 0; i < max_len; i++) {
+        int digit1 = i < len1 ? sayi1[i] - '0' : 0; // Eðer birinci sayýnýn bu basamaðý yoksa 0 olarak kabul ediyoruz.
+        int digit2 = i < len2 ? sayi2[i] - '0' : 0; // Eðer ikinci sayýnýn bu basamaðý yoksa 0 olarak kabul ediyoruz.
+
+        digit_sum = digit1 + digit2 + carry; // Bu basamaktaki rakamlarý topluyoruz.
+        carry = digit_sum / 10; // Carry deðerini hesaplýyoruz.
+        digit_sum = digit_sum % 10; // Bu basamaktaki sonuç rakamýný belirliyoruz.
+
+        toplam[i] = digit_sum + '0'; // Sonuç dizisine rakamý ekliyoruz.
+    }
+
+    // Eðer en son yapýlan toplamda bir carry deðeri varsa, sonuç dizisinin bir basamaðýna ekliyoruz.
+    if (carry > 0) {
+        toplam[max_len] = carry + '0';
+        toplam[max_len + 1] = '\0';
+    } else {
+        toplam[max_len] = '\0';
+    }
+
+    // Sonuç dizisini de ters çeviriyoruz
+    reverse_string(toplam);
+    reverse_string(sayi1);
+    reverse_string(sayi2);
+}
+
 int main()
 {
 	
@@ -30,8 +79,8 @@ int main()
 		{
 			printf(" ");
 		}
-		printf("     %s\n", sayi1);
-		printf("      %s\n", sayi2);	
+		printf("    %s\n", sayi1);
+		printf("     %s\n", sayi2);	
 	}
 
 	if (length2 < length1)	
@@ -44,25 +93,17 @@ int main()
 		printf("      %s\n", sayi2);	
 	}
 	
-// Burada birinci ya da ikinci sayilardan hangisinin basamak sayisi fazlaysa onu bulup o kadar cizgi ceken bir fonksiyon yazdim.	
-	
-	printf("     +\n     ");
-	
-	if (length1 < length2)
-	{
-		for (i=0;i<length2;i++)
-		{
-			printf("-");
-		}	
-	}
-	
-	if (length2 < length1)
+	if (length2 == length1)
 	{
 		for (i=0;i<length1;i++)
 		{
 			printf("-");
 		}	
 	}
+	
+// Burada birinci ya da ikinci sayilardan hangisinin basamak sayisi fazlaysa onu bulup o kadar cizgi ceken bir fonksiyon yazdim.	
+	
+	printf("     +\n     ");
 	
 	if (length2 == length1)
 	{
@@ -71,82 +112,18 @@ int main()
 			printf("-");
 		}	
 	}
-
-
-///////////////////////////////////////////////////////////
-
-	printf("\n     ");	
-	j=length1;
 	
-while(length1>0)
-{
+	add_numbers(sayi1, sayi2, toplam);
+    int r = strlen(toplam);
+    int s = 0 ;
 	
-	a=char_to_int(sayi2[length1-basamak_fark]);
-	b=char_to_int(sayi1[length1]);
-    sum=(int)a+b;
-    
-	if (sum>=10)
-	
-	{
-	toplam[length1]=(sum%10);
-	sayi2[length1-basamak_fark-1]+=1;
-    }
-    
-    else 
+	while (s < r )
     {
-    	toplam[length1]=sum;
-    }
-     
-	length1--;
- 	
-}
+    	printf("-") ;
+    	++s ;
+	}
+	printf("\n     ");
+    printf("%*s\n", strlen(toplam), toplam);
 
- 	for(j;j>=0;j--)
- {
- 	printf("%d",toplam[j]);
- }
-
-}
-
-int char_to_int (int ascii)
-{
-	int sayi;
-	
-	switch(ascii)
-	{
-	   case 48:
-	   sayi=0;
-	   break;
-	   case 49:
-	   sayi=1;
-	   break;
-	   case 50:
-	   sayi=2;
-	   break;
-	   case 51:
-	   sayi=3;
-	   break;
-	   case 52:
-	   sayi=4;
-	   break;
-	   case 53:
-	   sayi=5;
-	   break;
-	   case 54:
-	   sayi=6;
-	   break;
-	   case 55:
-	   sayi=7;
-	   break;
-	   case 56:
-	   sayi=8;
-	   break;
-	   case 57:
-	   sayi=9;
-	   break;
-}
-	   
-	   return sayi;
-	
-	
+    return 0;
 }
