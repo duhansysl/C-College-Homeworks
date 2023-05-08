@@ -70,54 +70,31 @@ int main()
 
 
 // Burada basamak farkini hesaplayip sayilari duzgun bicimde alt alta yazdirdim.	
-	
-	basamak_fark = abs(length1-length2);
 
-	if (length1 < length2)	
-	{
-		for (i=0;i<basamak_fark;i++)
-		{
-			printf(" ");
-		}
-		printf("    %s\n", sayi1);
-		printf("     %s\n", sayi2);	
-	}
-
-	if (length2 < length1)	
-	{
-		printf("     %s\n", sayi1);
-		for (i=0;i<basamak_fark;i++)
-		{
-			printf(" ");
-		}
-		printf("      %s\n", sayi2);	
-	}
-	
-	if (length2 == length1)
-	{
-		for (i=0;i<length1;i++)
-		{
-			printf("-");
-		}	
-	}
-	
-// Burada birinci ya da ikinci sayilardan hangisinin basamak sayisi fazlaysa onu bulup o kadar cizgi ceken bir fonksiyon yazdim.	
-	
-	printf("     +\n     ");
-	
-	if (length2 == length1)
-	{
-		for (i=0;i<length1;i++)
-		{
-			printf("-");
-		}	
-	}
-	
 	add_numbers(sayi1, sayi2, toplam);
-    int r = strlen(toplam);
-    int s = 0 ;
+    int r = strlen(toplam) ;
+    int s = 0 , y = 0 , z = 0 ; 
+    int f1 = strlen(toplam) - strlen(sayi1) ;
+    int f2 = strlen(toplam) - strlen(sayi2) ;
+    
+    // Basamak farklarýnýn sayýsal deðerlerini hesaplamak için tnaýmlamalar yaptým 
+    
+    printf("\n") ;
+    
+    for (y=0 ; y!=f1 ; ++y )
+    {
+    	printf(" ");
+	}
 	
-	while (s < r )
+    printf("     %*s\n     ", strlen(sayi1), sayi1) ;
+    for (z=0 ; z!=f2 ; ++z )
+    {
+    	printf(" ");
+	}
+	
+    printf("%*s\n", strlen(sayi2), sayi2);
+    printf("     +\n     ");
+    while (s < r)
     {
     	printf("-") ;
     	++s ;
@@ -125,5 +102,5 @@ int main()
 	printf("\n     ");
     printf("%*s\n", strlen(toplam), toplam);
 
-    return 1;
+    return 0;
 }
