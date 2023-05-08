@@ -6,10 +6,10 @@
 int main()
 {
 	
-// Burada girilen sayilarin string veri tipi ile diziye (sayi1&2) aktarilmasini sagladim.
-	
-	char sayi1[100000], sayi2[100000];
+// Burada girilen sayilarin char veri tipi ile diziye (sayi1&2) aktarilmasini sagladim.
+
 	int basamak_fark, length1, length2, i;
+	char sayi1[100000], sayi2[100000];
 	printf("---------------------------------------\n");
 	printf("Birinci sayi:");
 	scanf("%s%n", &sayi1, &length1);
@@ -18,7 +18,8 @@ int main()
 	scanf("%s%n", &sayi2, &length2);
 	printf("---------------------------------------\n");
 	printf("\n");
-	
+
+
 // Burada basamak farkini hesaplayip sayilari duzgun bicimde alt alta yazdirdim.	
 	
 	basamak_fark = abs(length1-length2);
@@ -29,23 +30,23 @@ int main()
 		{
 			printf(" ");
 		}
-		printf("%s\n", sayi1);
-		printf(" %s\n", sayi2);	
+		printf("     %s\n", sayi1);
+		printf("      %s\n", sayi2);	
 	}
 
 	if (length2 < length1)	
 	{
-		printf("%s\n", sayi1);
+		printf("     %s\n", sayi1);
 		for (i=0;i<basamak_fark;i++)
 		{
 			printf(" ");
 		}
-		printf(" %s\n", sayi2);	
+		printf("      %s\n", sayi2);	
 	}
 	
 // Burada birinci ya da ikinci sayilardan hangisinin basamak sayisi fazlaysa onu bulup o kadar cizgi ceken bir fonksiyon yazdim.	
 	
-	printf("+\n");
+	printf("     +\n     ");
 	
 	if (length1 < length2)
 	{
@@ -55,12 +56,22 @@ int main()
 		}	
 	}
 	
-		if (length2 < length1)
+	if (length2 < length1)
 	{
 		for (i=0;i<length1;i++)
 		{
 			printf("-");
 		}	
 	}
+
+	
+	
+	
+	printf("\n");
+	
+	return 1;
 }
+
+
+	
 
