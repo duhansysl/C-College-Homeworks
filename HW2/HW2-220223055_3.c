@@ -9,7 +9,7 @@ int main()
 // Burada girilen sayilarin char veri tipi ile diziye (sayi1&2) aktarilmasini sagladim.
 
 	int basamak_fark, length1, length2, i;
-	char sayi1[100000], sayi2[100000];
+	char sayi1[100000], sayi2[100000], toplam[1000000];
 	printf("---------------------------------------\n");
 	printf("Birinci sayi:");
 	scanf("%s%n", &sayi1, &length1);
