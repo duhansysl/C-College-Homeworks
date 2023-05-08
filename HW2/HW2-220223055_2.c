@@ -28,10 +28,12 @@ int main()
 	
 // Burada ise degerlere gore argumanlar yazildi.
 
-	if(IsSorted(x, N)){
+	if(IsSorted(x, N))
+	{
 		printf("\nGirilen sayilar kucukten buyuge dogru siralidir.");
 	}
-	else {
+	else 
+	{
 		printf("\nGirilen sayilar kucukten buyuge dogru sirali degildir.");
 	}
 	return 0;
@@ -45,7 +47,7 @@ int IsSorted(double x[], int N)
 	 {
  		return 1;
 	 }
-	if(x[0] <= x[1])
+	if(x[0] < x[1])
 	{
 	 	return IsSorted(x + 1, N - 1);
 	}
