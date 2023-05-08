@@ -59,7 +59,7 @@ double x1, y1, s1, x2, y2, s2, x, y;
  intersection_point[0]=(x1*s2-x2*s1)/(x2*y1-x1*y2);
  intersection_point[1]=(y1*s2-y2*s1)/(y2*x1-y1*x2);
  
- //
+ // Burada dogruyu yazdirdim.
  
 	printf("%.2lfx + %.2lfy + %.2lf = 0\n", x1 ,y1, s1);
 	printf("%.2lfx + %.2lfy + %.2lf = 0\n\n", x2 ,y2, s2);
