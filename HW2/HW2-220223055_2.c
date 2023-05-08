@@ -26,11 +26,13 @@ int main()
 	
 	IsSorted(x, N);
 	
+// Burada ise degerlere gore argumanlar yazildi.
+
 	if(IsSorted(x, N)){
-		printf("\nDizi kucukten buyuge siralidir.");
+		printf("\nGirilen sayilar kucukten buyuge dogru siralidir.");
 	}
 	else {
-		printf("\nDizi kucukten buyuge sirali degildir.");
+		printf("\nGirilen sayilar kucukten buyuge dogru sirali degildir.");
 	}
 	return 0;
 }
