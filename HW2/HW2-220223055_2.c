@@ -29,30 +29,39 @@ int main()
 
 // Burada IsSorted fonksiyonunu kullanarak kucukten buyuge olup olmadigini kontrol eden kodu yazdim.
 
-int IsSorted(double x[], int N)
+int IsSorted(double x[], int N, int a, int i)
 {
- 
  	N--;
-
+ 	
+for(i = 0; i <= N ; i++)
+{
 	if (x[N] > x[N-1])
 {
+		a = 1;	
+}
+  	else if (x[N] < x[N-1])
+{
+ 		a = 0;
+}
+	else if (x[N] == x[N-1])
+{
+		a = 0;
+}
+
+	
+}
+if(a == 1){
 	 	printf("\n-------------------------------------------------\n");
  		printf("Girilen sayilar kucukten buyuge dogru siralidir.");
  		printf("\n-------------------------------------------------\n\n");
 }
-  	else if (x[N] < x[N-1])
-{
+else if(a == 0){
 		printf("\n-----------------------------------------------------\n");
  		printf("Girilen sayilar kucukten buyuge dogru sirali degildir.");
  		printf("\n-----------------------------------------------------\n\n");
 }
-	else if (x[N] == x[N-1])
-{
-		printf("\n-----------------------------------------------------\n");
- 		printf("Girilen sayilar kucukten buyuge dogru sirali degildir.");
- 		printf("\n-----------------------------------------------------\n\n");
 }
-	else return IsSorted(x, N);
-}
+
+
 
 
