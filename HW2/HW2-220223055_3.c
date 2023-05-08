@@ -3,7 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void reverse_string(char str[]) {
+// Burada yazilan sayiyi ters ceviren bir fonksiyon olusturduk. Cunku yazi tersten yaziliyor. Gerektiginde cagrilacak.
+
+void string_reversion(char str[]) {
     int length = strlen(str);
     int i;
     char temp;
@@ -15,41 +17,46 @@ void reverse_string(char str[]) {
     }
 }
 
+// Burada gerekli islemleri yapabilen fonksiyonu olusturduk. Gerektiginde main (ana) fonskiyon tarafindan cagrilacak.
+
 void add_numbers(char sayi1[], char sayi2[], char toplam[]) {
     int len1 = strlen(sayi1);
     int len2 = strlen(sayi2);
     int max_len = len1 > len2 ? len1 : len2;
-    int carry = 0;
-    int digit_sum = 0;
+    int calculation = 0;
+    int result = 0;
     int i;
 
-    // Dizileri ters çeviriyoruz ki birler basamaðýndan baþlayarak toplama yapabilelim.
-    reverse_string(sayi1);
-    reverse_string(sayi2);
+// Burada dizileri birler basamagindan itibaren toplama yapabilmek icin ustte olusturdugumuz fonksiyonla ters yazdirdim.
+
+    string_reversion(sayi1);
+    string_reversion(sayi2);
 
     for (i = 0; i < max_len; i++) {
-        int digit1 = i < len1 ? sayi1[i] - '0' : 0; // Eðer birinci sayýnýn bu basamaðý yoksa 0 olarak kabul ediyoruz.
-        int digit2 = i < len2 ? sayi2[i] - '0' : 0; // Eðer ikinci sayýnýn bu basamaðý yoksa 0 olarak kabul ediyoruz.
+        int digit1 = i < len1 ? sayi1[i] - '0' : 0; // Burada birinci sayinin basamagi olmadigi takdirde bu kýsmý 0 olarak kabul ettigimizi ifade ettik.
+        int digit2 = i < len2 ? sayi2[i] - '0' : 0; // Burada ikinci sayinin basamagi olmadigi takdirde bu kýsmý 0 olarak kabul ettigimizi ifade ettik.
 
-        digit_sum = digit1 + digit2 + carry; // Bu basamaktaki rakamlarý topluyoruz.
-        carry = digit_sum / 10; // Carry deðerini hesaplýyoruz.
-        digit_sum = digit_sum % 10; // Bu basamaktaki sonuç rakamýný belirliyoruz.
+        result = digit1 + digit2 + calculation; // Bu basamaktaki rakamlar toplaniyor.
+        calculation = result / 10; // Burada calculation degeri hesaplaniyor
+        result = result % 10; // Burada sonuc degeri hesaplaniyor
 
-        toplam[i] = digit_sum + '0'; // Sonuç dizisine rakamý ekliyoruz.
+        toplam[i] = result + '0'; // Toplam dizisine rakam ekleniyor
     }
 
-    // Eðer en son yapýlan toplamda bir carry deðeri varsa, sonuç dizisinin bir basamaðýna ekliyoruz.
-    if (carry > 0) {
-        toplam[max_len] = carry + '0';
+// En son yapilan toplamda bir calculation degeri varsa, toplam dizisinin bir basamagina ekliyoruz.
+
+    if (calculation > 0) {
+        toplam[max_len] = calculation + '0';
         toplam[max_len + 1] = '\0';
     } else {
         toplam[max_len] = '\0';
     }
 
-    // Sonuç dizisini de ters çeviriyoruz
-    reverse_string(toplam);
-    reverse_string(sayi1);
-    reverse_string(sayi2);
+// Sonuc dizisi ters yazildigi icin ters cevirici fonksiyon ile yazilar ters cevrilmekte.
+
+    string_reversion(toplam);
+    string_reversion(sayi1);
+    string_reversion(sayi2);
 }
 
 int main()
@@ -77,7 +84,7 @@ int main()
     int f1 = strlen(toplam) - strlen(sayi1) ;
     int f2 = strlen(toplam) - strlen(sayi2) ;
     
-    // Basamak farklarýnýn sayýsal deðerlerini hesaplamak için tnaýmlamalar yaptým 
+// Burada basamak farklarini olcup ona gore bosluk ekleyen ya da eklemeyen tespit edici kod yazdim, goruntusel anlamda guzel gozukmesi icin.
     
     printf("\n") ;
     
