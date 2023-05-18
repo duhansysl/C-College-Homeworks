@@ -47,8 +47,8 @@ int main()
 	double sinav_not = (( (double) tr / (double) soru_sayi) * 100);
 	
 	printf("\n\nSoru Sayisi            : %d\n", soru_sayi);    
-    printf("Dogru cevap sayisi     : %d\n", tr);
-    printf("Bos cevap sayisi       : %d\n", emp);
+    printf("Dogru Cevap Sayisi     : %d\n", tr);
+    printf("Bos Cevap Sayisi       : %d\n", emp);
     printf("Ogrencinin Sinav Notu  : %.2f\n", sinav_not);
 
     return 0;
