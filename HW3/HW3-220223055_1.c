@@ -20,3 +20,24 @@ int main()
 	gets(user_input);
 	printf("------------------------------------------------------------------");
 	soru_sayi=strlen(answers);
+	
+// Burada while dongusu ile cevaplar dogru ise dogru cevap sayisini, bossa bos tanimlamasini artiran kodu yazdim. 
+// '\0' komutu dizi elemaný bittiginde kodu sonlandiracak.
+
+	while (answers[i] != '\0')
+    {
+		if (answers[i] == user_input[i] && user_input[i] != ' ')
+		{
+        	i++;
+       		tr++;
+		}
+		else if (answers[i] != user_input[i] && user_input[i] != ' ')
+        {
+        	i++;
+		}
+		else if (user_input[i] == ' ')
+		{
+			i++;
+        	emp++;	
+		}
+    }
