@@ -49,7 +49,16 @@ int main()
                 en_uzak_nokta2 = Nokta_2D[j];
             }
         }
-    }   	
+    } 
+// Gerekli sonuclar yazdirildi.
+    
+    printf("\n--------------------------------------------------------------\n");    
+    printf("Birbirine en uzak olan noktalar      : (%d, %d) - (%d, %d)\n", (int)en_uzak_nokta1.x, (int)en_uzak_nokta1.y,(int)en_uzak_nokta2.x, (int)en_uzak_nokta2.y);
+    printf("--------------------------------------------------------------\n");     
+    printf("Noktalar arasindaki Euclid mesafesi  : %.3lf\n", en_uzak_mesafe);
+    printf("--------------------------------------------------------------\n");     
+    
+    return 0;	  	
 }
 
 
