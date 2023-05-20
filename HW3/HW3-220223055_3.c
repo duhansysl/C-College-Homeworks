@@ -12,6 +12,13 @@ typedef struct Nokta_2D
     double x, y;
 };
 
+double mesafe(struct Nokta_2D n1, struct Nokta_2D n2) 
+{
+    double dx = n1.x - n2.x;
+    double dy = n1.y - n2.y;
+    return sqrt(dx * dx + dy * dy);
+}
+
 int main() 
 {
 // Kullanicidan nokta sayisi istendi ve 2den az olmasi durumunda gerekli uyari yazdirildi.
