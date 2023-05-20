@@ -35,7 +35,21 @@ int main()
         printf("   %d. Nokta: ", i + 1);
         scanf("%lf %lf", &Nokta_2D[i].x, &Nokta_2D[i].y);
     }
-    		
+// Mesafe hesaplamasi yapmadan once en uzak mesafede olan 2 noktanin tespit edilmesi gerekiyor. Burada bunlari tespit ettik ve en uzak 1&2 nokta degiskenlerine atandi.
+    
+    double en_uzak_mesafe = 0.0;
+    struct Nokta_2D en_uzak_nokta1, en_uzak_nokta2;
+    
+    for (int i = 0; i < nokta_sayisi; i++) {
+        for (int j = i + 1; j < nokta_sayisi; j++) {
+            double current_mesafe = mesafe(Nokta_2D[i], Nokta_2D[j]);
+            if (current_mesafe > en_uzak_mesafe) {
+                en_uzak_mesafe = current_mesafe;
+                en_uzak_nokta1 = Nokta_2D[i];
+                en_uzak_nokta2 = Nokta_2D[j];
+            }
+        }
+    }   	
 }
 
 
