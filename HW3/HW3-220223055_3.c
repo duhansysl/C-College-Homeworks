@@ -14,7 +14,19 @@ typedef struct Nokta_2D
 
 int main() 
 {
-	
+// Kullanicidan nokta sayisi istendi ve 2den az olmasi durumunda gerekli uyari yazdirildi.
+
+    int nokta_sayisi; 
+    printf("-------------------\n");	  
+    printf(" Nokta sayisi: ");
+    scanf("%d", &nokta_sayisi);
+    printf("\n");    
+    
+    if (nokta_sayisi<2) 
+	{
+        printf("En az 2 nokta gereklidir!\n");
+        return 1;  
+    }	
 }
 
 
