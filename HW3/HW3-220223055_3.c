@@ -5,7 +5,12 @@
 #include <stdio.h>
 #include <math.h>
 
-int main() 
-{
+// Odevde belirtildiði gibi x ve y tanimlamalarini 'struct' yapisini kullanarak double veri tipi ile tanimladim.
 
-}
+typedef struct Nokta_2D 
+{
+    double x, y;
+};
+
+
+
