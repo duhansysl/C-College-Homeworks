@@ -23,14 +23,14 @@
 // a0 + a1x + a2x2 + … + aNxN
 //
 
-float PolinomHesapla(float *katsayilar, int derece, float x) 
+float PolinomHesapla(float *p, int N, float x) 
 {
     int i;
     float sonuc = 0;
 
-    	for (i=0; i<=derece; i++)
+    	for (i=0; i<=N; i++)
 		{
-     	   sonuc += *(katsayilar + i) * pow(x, i);
+     	   sonuc += *(p + i) * pow(x, i);
    		}
     
     return sonuc;
@@ -38,28 +38,28 @@ float PolinomHesapla(float *katsayilar, int derece, float x)
 
 int main() 
 {
-    int derece, i;
+    int N, i;
     float x;
     
     printf("---------------------------------------\n");
     printf("Polinomun derecesini girin: ");
-    scanf("%d", &derece);
+    scanf("%d", &N);
     printf("----------------------------------------\n");
   	printf("----\n"); 	    
 
-    float katsayilar[derece + 1];
+    float p[N + 1];
 
-    for (i=0; i<=derece; i++) 
+    for (i=0; i<=N; i++) 
 	{
         printf("%d. Degiskenin katsayisini girin: ", i+1);
-        scanf("%f", &katsayilar[i]);
+        scanf("%f", &p[i]);
   	    printf("----\n");            
     }
 
     printf("\nPolinomun degerinin hesaplanacagi noktayi girin: ");
     scanf("%f", &x);
 
-    float sonuc = PolinomHesapla(katsayilar, derece, x);
+    float sonuc = PolinomHesapla(p, N, x);
   	printf("\n-----------------------\n");
     printf("\nSonuc: %.2f\n", sonuc);
   	printf("\n-----------------------\n");    
