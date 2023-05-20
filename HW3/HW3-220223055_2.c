@@ -23,18 +23,15 @@
 // a0 + a1x + a2x2 + … + aNxN
 //
 
-#include <stdio.h>
-#include <math.h>
-
 double PolinomHesapla(double *p, int N, double x) 
 {
     int i;
     double sonuc = 0;
 
-    for (i = 0; i <= N; i++)
-    {
-        sonuc += *(p + i) * pow(x, (double)i);
-    }
+    for (i=0; i<=N; i++)
+   		{
+    	    sonuc += *(p + i) * pow(x, (double)i);
+    	}
 
     return sonuc;
 }
@@ -52,12 +49,12 @@ int main()
 
     double p[N + 1];
 
-    for (i = 0; i <= N; i++) 
-    {
-        printf("%d. Degiskenin katsayisini girin: ", i + 1);
-        scanf("%lf", &p[i]);
-        printf("----\n");            
-    }
+    for (i=0; i<=N; i++) 
+    	{
+       		printf("%d. Degiskenin katsayisini girin: ", i + 1);
+       		scanf("%lf", &p[i]);
+       		printf("----\n");            
+    	}
 
     printf("\nPolinomun degerinin hesaplanacagi noktayi girin: ");
     scanf("%lf", &x);
