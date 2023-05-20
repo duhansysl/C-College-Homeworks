@@ -5,6 +5,24 @@
 #include <stdio.h>
 #include <math.h>
 
+//
+// Giriþ Argümanlarý
+//
+// p : Katsayilar dizisinin ilk elemanýna iþaret eden pointer
+// 
+// a0 + a1x + a2x2 + … + aNxN
+// 
+// Katsayýlar hafýzada sýrasýyla a0, a1,…, aN olacak þekilde saklanmaktadýr.
+//
+// N : Polinomun derecesi
+//
+// x : Polinomun deðerinin hesaplanacaðý nokta 
+//
+// Geri Dönüþ Deðeri
+//
+// a0 + a1x + a2x2 + … + aNxN
+//
+
 float PolinomHesapla(float *katsayilar, int derece, float x) 
 {
     int i;
