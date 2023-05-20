@@ -23,6 +23,8 @@
 // a0 + a1x + a2x2 + … + aNxN
 //
 
+// Burada hesaplamayi yapan fonksiyonu yazdim.
+
 double PolinomHesapla(double *p, int N, double x) 
 {
     int i;
@@ -32,20 +34,22 @@ double PolinomHesapla(double *p, int N, double x)
    		{
     	    sonuc += *(p + i) * pow(x, (double)i);
     	}
-
+    	
     return sonuc;
 }
 
 int main() 
 {
+// Burada gereken tanimlamalar yapildi ve kullanicidan veri girisi istendi.	
     int N, i;
-    double x;
-    
+    double x; 
     printf("---------------------------------------\n");
     printf("Polinomun derecesini girin: ");
     scanf("%d", &N);
     printf("----------------------------------------\n");
-    printf("----\n"); 	    
+    printf("----\n"); 	
+	
+// Burada double verip tipi ile dizimi tanimladim ve for dongusu ile sirasiyla degiskenlerin katsayilarini p dizisine atadim.  
 
     double p[N + 1];
 
@@ -55,6 +59,8 @@ int main()
        		scanf("%lf", &p[i]);
        		printf("----\n");            
     	}
+    	
+// Kullanicidan polinomun hangi degerinin hesaplanmasi gerektigi konusunda bilgi girisi istendi ve bu long float ile alindi, hata payini en aza indirmek icin.
 
     printf("\nPolinomun degerinin hesaplanacagi noktayi girin: ");
     scanf("%lf", &x);
