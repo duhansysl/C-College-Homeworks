@@ -5,6 +5,19 @@
 #include <stdio.h>
 #include <math.h>
 
+float PolinomHesapla(float *katsayilar, int derece, float x) 
+{
+    int i;
+    float sonuc = 0;
+
+    for (i = 0; i <= derece; i++)
+	{
+        sonuc += *(katsayilar + i) * pow(x, i);
+    }
+    
+    return sonuc;
+}
+
 int main() 
 {
     int derece, i;
@@ -15,7 +28,8 @@ int main()
 
     float katsayilar[derece + 1];
 
-    for (i = 0; i <= derece; i++) {
+    for (i = 0; i <= derece; i++) 
+	{
         printf("%d katsayisini girin: ", i+1);
         scanf("%f", &katsayilar[i]);
     }
