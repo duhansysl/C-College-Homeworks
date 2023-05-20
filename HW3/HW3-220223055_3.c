@@ -26,7 +26,16 @@ int main()
 	{
         printf("En az 2 nokta gereklidir!\n");
         return 1;  
-    }	
+    }
+// Kullanicinin girdiði nokta koordinatlari for dongusu ile x ve y seklinde Nokta2D dizisine aktarildi. for dongusu artirdikca degerler de yeni yerine atandi.
+    
+	struct Nokta_2D Nokta_2D[nokta_sayisi];
+    for (int i=0; i<nokta_sayisi; i++) 
+	{
+        printf("   %d. Nokta: ", i + 1);
+        scanf("%lf %lf", &Nokta_2D[i].x, &Nokta_2D[i].y);
+    }
+    		
 }
 
 
