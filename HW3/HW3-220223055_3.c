@@ -12,5 +12,9 @@ typedef struct Nokta_2D
     double x, y;
 };
 
+int main() 
+{
+	
+}
 
 
